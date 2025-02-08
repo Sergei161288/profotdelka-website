@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПрофОтделка - Шпаклевка и покраска</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            ПрофОтделка
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#calculator">Калькулятор</a></li>
+                <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h2>Механизированная шпаклевка и покраска в Курске</h2>
+            <p>Быстро, качественно, с гарантией. Выезд замерщика - бесплатно!</p>
+            <a href="#contacts" class="button">Заказать бесплатный замер</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="calculator">
+            <h2>Калькулятор стоимости</h2>
+            <p>Рассчитайте стоимость работ по шпаклевке и покраске онлайн</p>
+
+            <label for="area">Площадь поверхности (м²):</label>
+            <input type="number" id="area" name="area">
+
+            <label for="material">Выберите материал:</label>
+            <select id="material" name="material">
+                <option value="shpaklevka">Шпаклевка</option>
+                <option value="kraska">Краска</option>
+            </select>
+
+            <button onclick="calculate()">Рассчитать</button>
+
+            <div id="result">Результат:</div>
+        </section>
+
+        <section id="portfolio">
+            <h2>Наши работы</h2>
+            <div class="portfolio-items">
+                <div class="portfolio-item">
+                    <img src="" alt="Пример работы 1">
+                    <p>Описание работы 1</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="" alt="Пример работы 2">
+                    <p>Описание работы 2</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="" alt="Пример работы 3">
+                    <p>Описание работы 3</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews">
+            <h2>Отзывы клиентов</h2>
+            <div class="review-items">
+                <div class="review-item">
+                    <h3>Иван Петрович</h3>
+                    <p>Отличная работа, все сделали быстро и качественно!</p>
+                </div>
+                <div class="review-item">
+                    <h3>Мария Ивановна</h3>
+                    <p>Рекомендую эту компанию, очень довольна результатом.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="advantages">
+            <h2>Почему выбирают нас?</h2>
+            <ul>
+                <li>Опытные мастера с многолетним стажем</li>
+                <li>Использование только качественных материалов</li>
+                <li>Гарантия на все виды работ</li>
+                <li>Бесплатный выезд замерщика</li>
+                <li>Соблюдение сроков</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contacts">
+            Телефон: [Ваш телефон]<br>
+            Email: [Ваш email]<br>
+            Адрес: [Ваш адрес]
+        </div>
+        <div class="copyright">
+            &copy; 2024 ПрофОтделка
+        </div>
+    </footer>
+
+    <script>
+        function calculate() {
+            var area = document.getElementById('area').value;
+            var material = document.getElementById('material').value;
+            var result = "Стоимость: " + area * 100 + " рублей";
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+
+</body>
+</html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор стоимости шпаклевки и покраски</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* === ОБЩИЕ СТИЛИ === */
+        body {
+  background-color: #f0f8ff;
+  color: #333;
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background-color: #f0f8ff;
+  color: #333;
+  padding: 20px;
+  text-align: center;
+  /* Добавляем фоновое изображение (C:\Users\ASUS\Desktop\мини ап) */
+  background-image: url("img/glavnaya-1.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+header .logo {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /*  Выравниваем элементы в строку */
+    justify-content: center; /*  Выравниваем по центру */
+}
+
+header nav li {
+    margin: 0 15px;
+}
+
+header nav a {
+    color: #555; /*  Medium gray links */
+    text-decoration: none;
+    transition: color 0.3s ease; /*  Плавное изменение цвета при наведении */
+}
+
+header nav a:hover {
+    color: #007bff; /*  Blue on hover */
+}
+
+.header-content {
+    max-width: 800px; /*  Ограничиваем ширину контента */
+    margin: 20px auto; /*  Центрируем по горизонтали */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /*  White with transparency */
+    border-radius: 10px; /*  Rounded corners */
+}
+
+.header-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.header-content p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.header-content .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue button */
+    color: #fff; /* White text */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.header-content .button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+        /* === СТИЛИ ОСНОВНОГО КОНТЕНТА === */
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="number"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        /* === СТИЛИ КНОПОК === */
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* === СТИЛИ ПОДВАЛА === */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* === МЕДИА-ЗАПРОСЫ (АДАПТИВНОСТЬ) === */
+        /* Стили для экранов шириной до 768px (например, смартфоны) */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px; /* Уменьшаем отступы */
+            }
+
+            header {
+                padding: 10px; /* Уменьшаем отступы */
+            }
+
+            section {
+                padding: 10px; /* Уменьшаем отступы */
+            }
+
+            input[type="number"],
+            select {
+                padding: 8px; /* Уменьшаем отступы */
+            }
+
+            button {
+                padding: 10px 16px; /* Уменьшаем отступы */
+            }
+        }
+
+        /* === СТИЛИ РЕЗУЛЬТАТА === */
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #result h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        #total-cost {
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745; /* Зеленый цвет */
+        }
+
+        .currency {
+            font-size: 24px;
+            color: #28a745;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Калькулятор стоимости</h1>
+        <p>Рассчитайте стоимость работ по шпаклевке и покраске онлайн</p>
+    </header>
+
+    <main>
+        <section id="calculator">
+            <h2>Параметры поверхности</h2>
+            <form id="calculator-form">
+                <label for="area">Площадь поверхности (м²):</label>
+                <input type="number" id="area" name="area" required>
+
+                <label for="work-type">Тип работ:</label>
+                <select id="work-type" name="work-type">
+                    <option value="shpaklevka">Шпаклевка</option>
+                    <option value="pokraska">Покраска</option>
+                    <option value="gruntovka">Грунтовка</option>
+                    <option value="shlifovka">Шлифовка</option>
+                </select>
+
+                <label for="surface-type">Тип поверхности:</label>
+                <select id="surface-type" name="surface-type">
+                    <option value="beton">Бетон</option>
+                    <option value="kirpich">Кирпич</option>
+                    <option value="gipsokarton">Гипсокартон</option>
+                    <option value="shtukaturka">Штукатурка</option>
+                </select>
+
+                <button type="button" id="calculate-button">Рассчитать</button>
+            </form>
+
+            <div id="result">
+                <h3>Предварительная стоимость:</h3>
+                <p>
+                    <span id="total-cost">0</span> <span class="currency">₽</span>
+                </p>
+                <p id="calculation-details"></p>
+            </div>
+        </section>
+
+        <section id="examples">
+            <h2>Примеры работ</h2>
+            <div class="example-item">
+                <img src="" alt="Пример работы 1">
+                <p>Описание примера работы 1</p>
+            </div>
+            <div class="example-item">
+                <img src="" alt="Пример работы 2">
+                <p>Описание примера работы 2</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Механизированная шпаклевка и покраска</p>
+    </footer>
+
+    <script>
+        // Получаем элементы DOM
+        const areaInput = document.getElementById('area');
+        const workTypeSelect = document.getElementById('work-type');
+        const surfaceTypeSelect = document.getElementById('surface-type');
+        const calculateButton = document.getElementById('calculate-button');
+        const totalCostElement = document.getElementById('total-cost');
+
+        // Функция для расчета стоимости
+        function calculateCost() {
+            // Получаем значения из полей формы
+            const area = parseFloat(areaInput.value);
+            const workType = workTypeSelect.value;
+            const surfaceType = surfaceTypeSelect.value;
+
+            // Проверяем, что площадь введена корректно
+            if (isNaN(area) || area <= 0) {
+                alert('Пожалуйста, введите корректную площадь поверхности.');
+                return;
+            }
+
+            // Определяем базовую стоимость за квадратный метр
+            let baseCost = 0;
+
+            // В зависимости от типа работ
+            if (workType === 'shpaklevka') {
+                baseCost = 300; // Примерная стоимость шпаклевки
+            } else if (workType === 'pokraska') {
+                baseCost = 200; // Примерная стоимость покраски
+            } else if (workType === 'gruntovka') {
+                baseCost = 100; // Примерная стоимость грунтовки
+            } else if (workType === 'shlifovka') {
+                baseCost = 150; // Примерная стоимость шлифовки
+            }
+
+            // Учитываем тип поверхности (усложняющий коэффициент)
+            if (surfaceType === 'kirpich') {
+                baseCost *= 1.2; // Кирпич сложнее обрабатывать
+            } else if (surfaceType === 'gipsokarton') {
+                baseCost *= 0.8; // Гипсокартон легче обрабатывать
+            } else if (surfaceType === 'shtukaturka') {
+                baseCost *= 1.1; // Штукатурка средней сложности
+            }
+
+            // Рассчитываем общую стоимость
+            const totalCost = area * baseCost;
+
+            // Выводим результат на страницу
+            totalCostElement.textContent = totalCost.toFixed(2); // Округляем до 2 знаков после запятой
+            document.getElementById('calculation-details').textContent = `Площадь: ${area} м², Тип работ: ${workType}`;
+        }
+
+        // Добавляем обработчик события на кнопку "Рассчитать"
+        calculateButton.addEventListener('click', calculateCost);
+    </script>
+</body>
+</html>
